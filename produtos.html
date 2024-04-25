@@ -11,28 +11,41 @@
         }
         .nav-title {
             font-size: 30px;
+            margin-top: 25px;
         }
-        .container {
-            background-color: #b9cdd44f; 
-            border-radius: 10px; 
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+        .table-box {
+            background-color: #1a68a421; 
+            border-radius: 9px; 
+            box-shadow: 0px 0px 10px rgba(70, 69, 69, 0.47); 
+            padding: 20px;
+        }
+
+        .cadastro {
+            background-color: #1a68a421; 
+            border-radius: 9px; 
+            box-shadow: 0px 0px 10px rgba(70, 69, 69, 0.47); 
             padding: 20px;
         }
         body {
-            background-color: #f8f9fa;
+            background-color: hsla(236, 59%, 89%, 0.651);
         }
         
         .btn-custom {
             color: #fff; 
             background-color: #0996ed6d; 
             border: none; 
-            border-radius: 5px; 
+            border-radius: 9px; 
             padding: 10px 20px; 
             cursor: pointer;
         }
 
         .btn-custom:hover {
             background-color: #0d7ef7;
+        }
+
+        .custom-table {
+            border-radius: 9px;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -47,46 +60,48 @@
     </nav> 
     <div class="container">       
         <div class="row">
-            <div class="col-md-6">
-                
-                <div class="mb-3 input-group">
-                    <input type="text" class="form-control" id="descricao" placeholder="Descrição">
-                </div>
-                <div class="mb-3">
-                    <select name="" class="form-select" id="categoria">
-                        <option selected disabled>Selecione uma categoria</option>
-                        <option value="alimento">Alimento</option>
-                        <option value="limpeza">Limpeza</option>
-                        <option value="farmacia">Farmácia</option>
-                    </select>
-                </div>
-                <label class="form-label">Preço:</label>
-                <div class=" input-group mb-3">
-                    <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" id="preco">
-                    <span class="input-group-text">.00</span>
-                </div>
-                <div class="mb-3">
-                    <button type="button" class="btn btn-custom" id="btnCadastrar">Incluir produto</button>
-                </div>
+            <div class="col-md-6">    
+                <div class="cadastro">
+                    <div class="mb-3 input-group">
+                        <input type="text" class="form-control" id="descricao" placeholder="Descrição">
+                    </div>
+                    <div class="mb-3">
+                        <select name="" class="form-select" id="categoria">
+                            <option selected disabled>Selecione uma categoria</option>
+                            <option value="alimento">Alimento</option>
+                            <option value="limpeza">Limpeza</option>
+                            <option value="farmacia">Farmácia</option>
+                        </select>
+                    </div>
+                    
+                    <div class=" input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" id="preco" placeholder="Digite o preço">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-custom" id="btnCadastrar">Incluir produto</button>
+                    </div>
+                </div>            
             </div>
-            <div class="col-md-6">                
-                <table class="table table-striped">
-                    <thead>
-                        <tr class="table">
-                            <td  >Descrição</td>
-                            <td  >Categoria</td>
-                            <td  >Preco</td>
-                        </tr>
-                    </thead>
-                   
-                    <tbody id="tabela">
-                        
-                    </tbody>
-                </table>
+            <div class="col-md-6">    
+                <div class="table-box">
+                    <table class="table custom-table table-striped">
+                        <thead>
+                            <tr class="table">
+                                <th scope="col" >Descrição</th>
+                                <th  scope="col">Categoria</td>
+                                <th  scope="col">Preco</td>
+                            </tr>
+                        </thead>
+                       
+                        <tbody id="tabela">
+                            
+                        </tbody>
+                    </table>
+                </div>            
             </div>
         </div>
-
     </div>
 
     <script>
@@ -124,6 +139,8 @@ function listarProdutos(){
         }
 
         listarProdutos();
+
+        
 
 
         document.getElementById("btnCadastrar").addEventListener('click', function(){
