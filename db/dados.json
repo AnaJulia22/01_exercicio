@@ -1,0 +1,28 @@
+{
+  "produtos": [
+    {
+      "id": "c27d",
+      "descricao": "Arroz",
+      "categoria": "alimento",
+      "preco": "$5.00"
+    },
+    {
+      "id": "6d91",
+      "descricao": "Feijao",
+      "categoria": "alimento",
+      "preco": "$10.00"
+    },
+    {
+      "id": "f9b2",
+      "descricao": "Macarrao",
+      "categoria": "alimento",
+      "preco": "$12.00"
+    },
+    {
+      "id": "094b",
+      "descricao": "Chocolate",
+      "categoria": "alimento",
+      "preco": "$7.00"
+    }
+  ]
+}
